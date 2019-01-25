@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
   export ZSH="/home/fhadiel/.oh-my-zsh"
-  alias f0x48="/usr/bin/git --git-dir=$HOME/.mconfig/ --work-tree=$HOME"
+  alias f0x48="/usr/bin/git --git-dir=$HOME/.f0x48/ --work-tree=$HOME"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME

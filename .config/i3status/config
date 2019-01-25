@@ -1,1 +1,73 @@
-/home/fhadiel/.f0x48/i3status-config
+# i3status configuration file. see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+# general {
+# 	colors = true
+# 	color_good = "#B9C9ED"
+# 	color_bad = "#11192A"
+# 	color_degraded = "#55858E"
+# 	interval = 2
+# }
+general {
+  output_format = "i3bar"
+  colors = true
+  color_good = "#8FC1FF"
+  color_degraded = "#FEE28F"
+  color_bad = "#FF928F"
+
+}
+order += "ethernet _first_"
+order += "cpu_usage"
+order += "volume master"
+order += "disk /home"
+order += "disk /"
+order += "battery 1"
+order += "tztime local"
+order += "wireless _first_"
+
+cpu_usage {
+	format = "CPU %usage"
+}
+
+volume master {
+	format = "VOL %volume"
+	format_muted = "VOLX%volume"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}
+
+
+wireless _first_ {
+        format_up = "%essid%quality"
+        format_down = "WLAN"
+}
+
+ethernet _first_ {
+        # if you use %speed, i3status requires root privileges
+        format_up = "%ip"
+        format_down = "ETH"
+}
+
+battery 1 {
+        format = "%status %percentage"
+}
+
+tztime local {
+        format = "%y.%m.%d %H:%M:%S"
+}
+
+load {
+        format = "%1min"
+}
+
+disk "/home"{
+        format = "HOME %avail"
+}
+disk "/" {
+	format = "ROOT %avail"
+}

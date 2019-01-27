@@ -129,7 +129,7 @@ assign [class="Chromium"] $w_browser
 assign [class="Code|GNS3"] $w_code
 assign [class="Thunar|Gedit"] $w_utils
 
-for_window [class="Chromium|discord|PacketTracer7"] border none
+for_window [class="Chromium|discord"] border none
 for_window [class="Xfce4-terminal"] border pixel 2
 for_window [class="pavucontrol"] floating enable
 

@@ -107,7 +107,6 @@ bindsym $mod+Shift+o mode $logout
 
 set $nsi --no-startup-id
 set $menu $nsi rofi -show run
-exec $nsi compton
 exec $nsi xfce4-power-manager
 exec $nsi wicd-client -t
 exec $nsi caffeine
@@ -134,41 +133,26 @@ for_window [class="Xfce4-terminal"] border pixel 2
 for_window [class="pavucontrol"] floating enable
 
 
-set $clr1 #2F343F
-set $clr2 #676E7D
-set $clr3 #4A5160
-set $clr4 #1C2230
-set $clr5 #11192A
-set $clr6 #686868
-set $clr7 #B9C9ED
-set $clr8 #000000
+client.focused          #EF798A #EF798A #FFFFFF #F0DF44   #EF798A
+client.focused_inactive #9297C4 #9297C4 #FFFFFF #9297C4   #9297C4
+client.unfocused        #9297C4 #9297C4 #FFFFFF #F0DF44   #9297C4
+client.urgent           #F0DF44 #F0DF44 #FFFFFF #9297C4   #F0DF44
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
-
-
-
-
-client.focused          #F1C48B #F1C48B #6B4958 #8FC2F6   #F1C48B
-client.focused_inactive #8FC2F6 #8FC2F6 #6B4958 #F1C48B   #C0505E
-client.unfocused        #8FC2F6 #8FC2F6 #6B4958 #F1C48B   #8FC2F6
-client.urgent           #C0505E #C0505E #FFFFFF #8FC2F6   #C0505E
-client.placeholder      #000000 #0C0C0C #6B4958 #000000   #0C0C0C
-
-client.background       #6B4958
-
+client.background       #FFFFFF
 bar {
-  status_command i3status
   strip_workspace_numbers yes
+  status_command i3status
   colors {
-    background #4F4B5E
-    statusline #FFFFFF
-    separator  #666666
+    background #282A36
+    statusline #c3c6de
+    separator  #363748
 
-    focused_workspace  #8FC2F6 #8FC2F6 #6B4958
-    active_workspace   #F1C48B #F1C48B #6B4958
-    inactive_workspace #4F4B5E #4F4B5E #FFFFFF
-    urgent_workspace   #C0505E #C0505E #FFFFFF
-    binding_mode       #F1C48B #C0505E #FFFFFF
+    focused_workspace  #9297C4 #6E6B8F #FFFFFF
+    active_workspace   #EF798A #6E6B8F #FFFFFF
+    inactive_workspace #282A36 #282A36 #888888
+    urgent_workspace   #EF798A #EF798A #FFFFFF
+    binding_mode       #F0DF44 #EF798A #FFFFFF
   
   }
-
 }

@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:Ubuntu Mono 10.3
+font pango:Ubuntu Mono Nerd Font 10.3
 floating_modifier $mod
 
 # start a terminal
@@ -59,6 +59,8 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+bindsym $mod+c sticky toggle
+
 # switch to workspace
 set $w_utils "1:Utils"
 set $w_browser "2:Browser"
@@ -106,15 +108,15 @@ bindsym $mod+Shift+o mode $logout
 
 
 set $nsi --no-startup-id
-set $menu $nsi rofi -show run
 exec $nsi xfce4-power-manager
 exec $nsi wicd-client -t
 exec $nsi caffeine
 exec $nsi xset b off
-exec $nsi /home/fhadiel/.myfehbg
-
-bindsym $mod+d exec $menu
-bindsym $mod+t exec nautilus
+exec $nsi nitrogen --restore
+exec $nsi compton
+# exec $nsi google-drive-ocamlfuse ~/GDrive
+bindsym $mod+d exec $nsi "rofi -combi-modi window,drun,run -show drun "
+bindsym $mod+t exec thunar
 bindsym $mod+x move workspace to output right
 bindsym $mod+Shift+Ctrl+s exec --no-startup-id xfce4-session-logout
 
@@ -124,12 +126,19 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
-assign [class="Chromium"] $w_browser
+assign [class="Chromium|Google-chrome"] $w_browser
 assign [class="Code|GNS3"] $w_code
-assign [class="Thunar|Gedit"] $w_utils
 
-for_window [class="Chromium|discord"] border none
-for_window [class="Xfce4-terminal"] border pixel 2
+#-- I3 GAPS ZONE
+smart_gaps on
+smart_borders on
+gaps inner 6
+
+#I3 GAPS ZONE --
+
+workspace_auto_back_and_forth yes
+for_window [class="Chromium|discord|chrome|Firefox|Thunar"] border none
+for_window [class="Xfce4-terminal"] border pixel 3
 for_window [class="pavucontrol"] floating enable
 
 
@@ -142,7 +151,7 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #FFFFFF
 bar {
   strip_workspace_numbers yes
-  status_command i3status
+  status_command SCRIPT_DIR=~/FDocument/GitClones/i3blocks-contrib i3blocks
   colors {
     background #282A36
     statusline #c3c6de

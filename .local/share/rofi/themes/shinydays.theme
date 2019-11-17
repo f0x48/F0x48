@@ -3,16 +3,16 @@
 ! User: F0x48
 ! ------------------------------------------------------------------------------
 rofi.color-normal:  #373B41,#F1E7E9,#373B41,#373B41,#EF798A
-rofi.modi: window,run
-rofi.padding: 14
+rofi.modi: window,run,ssh
+rofi.padding: 20
 rofi.color-window:  #373B41,#EF798A
 rofi.separator-style: none
 rofi.hide-scrollbar: true
 rofi.line-margin: 5
-rofi.bw: 2
-rofi.location:7
+rofi.bw: 4
+rofi.location:0
 rofi.font: Ubuntu Mono 14
-rofi.lines: 5
-rofi.width: 25 
-
-
+rofi.lines: 10
+rofi.width: 50
+rofi.drun-icon-theme: "Arc"
+rofi.show-icons: true

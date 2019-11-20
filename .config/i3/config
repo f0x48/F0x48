@@ -144,27 +144,27 @@ for_window [class="pavucontrol"] floating enable
 
 
 
-# class                 border  bground text    indicator child_border
-client.focused          #ED6416 #ED6416 #F5FFFF #51ADF8   #ED6416
-client.focused_inactive #231121 #231121 #F5FFFF #51ADF8   #231121
-client.unfocused        #231121 #231121 #ED6416 #51ADF8   #231121
-client.urgent           #ED6416 #231121 #F5FFFF #51ADF8   #ED6416
-client.placeholder      #000000 #0C0C0C #F5FFFF #51ADF8   #231121
+# class                 border   bground  text        indicator child_border
+client.focused          #F46614   #F46614     #FFFFFF   #89D4FB    #F46614
+client.focused_inactive #20232D  #20232D    #FFFFFF  #B33B1B    #40465A 
+client.unfocused        #20232D  #20232D    #F46614       #B33B1B    #40465A 
+client.urgent           #89D4FB  #20232D    #FFFFFF  #B33B1B    #89D4FB
+client.placeholder      #20232D  #20232D    #FFFFFF  #B33B1B    #40465A 
 
-client.background       #ED6416
+client.background       #F46614
 
 bar {
   strip_workspace_numbers yes
   status_command SCRIPT_DIR=~/FDocument/GitClones/i3blocks-contrib i3blocks
   colors {
-    background #231121
-    statusline #FFFFFF
-    separator  #231121
+    background #20232D 
+    statusline #C4B7BD
+    separator  #40465A 
 
-    focused_workspace  #ED6416 #ED6416 #FFFFFF
-    active_workspace   #333333 #222222 #FEFB78
-    inactive_workspace #333333 #222222 #888888
-    urgent_workspace   #2F343A #900000 #FFFFFF
-    binding_mode       #2F343A #900000 #FFFFFF
+    focused_workspace  #F46614    #F46614       #FFFFFF 
+    active_workspace   #20232D   #20232D      #F46614
+    inactive_workspace #20232D   #20232D      #C4B7BD
+    urgent_workspace   #20232D   #89D4FB      #FFFFFF
+    binding_mode       #20232D   #89D4FB      #FFFFFF
   }
 }

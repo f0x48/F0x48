@@ -142,7 +142,7 @@ for_window [class="Xfce4-terminal|kitty"] border pixel 4
 for_window [class=".*"] border pixel 4
 for_window [class="pavucontrol"] floating enable
 
-
+#RICEMOODINJECTIONAREA
 
 # class                 border   bground  text        indicator child_border
 client.focused          #F28A3E   #F28A3E     #FFFFFF   #F9B478    #F28A3E
@@ -169,3 +169,5 @@ bar {
     binding_mode       #1E1835   #F9B478      #FFFFFF
   }
 }
+
+#RICEMOODINJECTIONAREA

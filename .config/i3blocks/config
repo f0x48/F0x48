@@ -1,4 +1,8 @@
 
+[activewindow]
+command=~/clones/xtitle/xtitle -s
+interval=persist
+
 #[mediaplayer]
 #command=BLOCK_INSTANCE=spotify ~/.i3b/mediaplayer/mediaplayer 
 #instance=spotify

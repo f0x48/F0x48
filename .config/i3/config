@@ -65,15 +65,18 @@ bindsym $mod+c sticky toggle
 set $w_utils "1:Utils"
 set $w_browser "2:Browser"
 set $w_code "3:Work"
+set $w_stuff "4:Stuff"
 
 bindsym $mod+1 workspace $w_utils
 bindsym $mod+2 workspace $w_browser
 bindsym $mod+3 workspace $w_code
+bindsym $mod+4 workspace $w_stuff
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $w_utils
 bindsym $mod+Shift+2 move container to workspace $w_browser
 bindsym $mod+Shift+3 move container to workspace $w_code
+bindsym $mod+Shift+4 move container to workspace $w_stuff
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -113,7 +116,7 @@ exec $nsi wicd-client -t
 exec $nsi caffeine
 exec $nsi xset b off
 exec $nsi nitrogen --restore
-#exec $nsi compton
+exec $nsi compton
 # exec $nsi google-drive-ocamlfuse ~/GDrive
 bindsym $mod+d exec "rofi -combi-modi window,drun,run -show drun"
 bindsym $mod+t exec thunar
@@ -126,8 +129,8 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
-assign [class="Chromium|Google-chrome"] $w_browser
-assign [class="Code|GNS3"] $w_code
+#assign [class="Chromium|Google-chrome"] $w_browser
+#assign [class="Code|GNS3"] $w_code
 
 #-- I3 GAPS ZONE
 smart_gaps on
@@ -145,28 +148,28 @@ for_window [class="pavucontrol"] floating enable
 #RICEMOODINJECTIONAREA
 
 # class                 border   bground  text        indicator child_border
-client.focused          #F28A3E   #F28A3E     #FFFFFF   #F9B478    #F28A3E
-client.focused_inactive #1E1835  #1E1835    #FFFFFF  #172767    #35295C 
-client.unfocused        #1E1835  #1E1835    #F28A3E       #172767    #35295C 
-client.urgent           #F9B478  #1E1835    #FFFFFF  #172767    #F9B478
-client.placeholder      #1E1835  #1E1835    #FFFFFF  #172767    #35295C 
+client.focused          #D37F9E   #D37F9E     #FFFFFF   #F4C1D1    #D37F9E
+client.focused_inactive #211E2F  #211E2F    #FFFFFF  #140C04    #3D3757 
+client.unfocused        #211E2F  #211E2F    #D37F9E       #140C04    #3D3757 
+client.urgent           #F4C1D1  #211E2F    #FFFFFF  #140C04    #F4C1D1
+client.placeholder      #211E2F  #211E2F    #FFFFFF  #140C04    #3D3757 
 
-client.background       #F28A3E
+client.background       #D37F9E
 
 bar {
   strip_workspace_numbers yes
   status_command SCRIPT_DIR=~/FDocument/GitClones/i3blocks-contrib i3blocks
   #status_command i3status
   colors {
-    background #1E1835 
-    statusline #98A9BF
-    separator  #35295C 
+    background #211E2F 
+    statusline #D4ADBB
+    separator  #3D3757 
 
-    focused_workspace  #F28A3E    #F28A3E       #FFFFFF 
-    active_workspace   #1E1835   #1E1835      #F28A3E
-    inactive_workspace #1E1835   #1E1835      #98A9BF
-    urgent_workspace   #1E1835   #F9B478      #FFFFFF
-    binding_mode       #1E1835   #F9B478      #FFFFFF
+    focused_workspace  #D37F9E    #D37F9E       #FFFFFF 
+    active_workspace   #211E2F   #211E2F      #D37F9E
+    inactive_workspace #211E2F   #211E2F      #D4ADBB
+    urgent_workspace   #211E2F   #F4C1D1      #000000
+    binding_mode       #211E2F   #F4C1D1      #000000
   }
 }
 
